@@ -11,6 +11,8 @@
 #include <SerialFake.h>
 #include <PrintFake.h>
 
+#include <cstring>
+
 #define ArduinoFakeGetHardwareSerial() ArduinoFakeGetter(HardwareSerial)
 #define ArduinoFakeGetFunction() ArduinoFakeGetter(Function)
 #define ArduinoFakeGetSerial() ArduinoFakeGetter(Serial)
