@@ -1,6 +1,11 @@
 #include "ArduinoFake.h"
 #include "ClientFake.h"
 
+int Client::connect(IPAddress ip, uint16_t port)
+{
+    return ArduinoFakeInstance(Client)->connect(ip, port);
+}
+
 int Client::connect(const char *host, uint16_t port)
 {
     return ArduinoFakeInstance(Client)->connect(host, port);

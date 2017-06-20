@@ -11,6 +11,8 @@
 #include <SerialFake.h>
 #include <PrintFake.h>
 #include <ClientFake.h>
+#include <IPAddressFake.h>
+#include <PrintableFake.h>
 
 #include <cstring>
 
@@ -54,6 +56,8 @@ struct ArduinoFakeMocks
     fakeit::Mock<StreamFake> Stream;
     fakeit::Mock<PrintFake> Print;
     fakeit::Mock<ClientFake> Client;
+    fakeit::Mock<IPAddressFake> IPAddress;
+    fakeit::Mock<PrintableFake> Printable;
 };
 
 struct ArduinoFakeInstances
@@ -64,6 +68,8 @@ struct ArduinoFakeInstances
     StreamFake* Stream;
     PrintFake* Print;
     ClientFake* Client;
+    IPAddressFake* IPAddress;
+    PrintableFake* Printable;
 };
 
 class ArduinoFakeContext
@@ -78,6 +84,8 @@ class ArduinoFakeContext
         ArduinoFakeSingleInstanceGetter(Function)
         ArduinoFakeSingleInstanceGetter(HardwareSerial)
         ArduinoFakeSingleInstanceGetter(Client)
+        ArduinoFakeSingleInstanceGetter(IPAddress)
+        ArduinoFakeSingleInstanceGetter(Printable)
 
         PrintFake* Print(class Print* p)
         {
